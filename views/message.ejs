@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Person Name: <%= ID %></h1>
+    <h2>Message: <%= message %></h2>
+
+    <!-- el switch se encargara de tomar el mensaje y compararlo con cada caso para saber que mostrar en el html -->
+    <% switch (message) { 
+        case 'Bienvenido': %>
+        <!-- aqui se define un ciclo para que se tome el numero exacto de times, para que tenga un final y pare de "contar" -->
+      <% for(let i = 1; i <= times; i++) { %>
+        <!-- se imprime el mensaje y el nombre de la persona -->
+            <li><%= message %> <%= ID %></li>
+     <% } %>
+        <% break;
+
+        case 'Adios': %>
+        <% for(let i = 1; i <= times; i++) { %>
+            <li><%= message %> <%= ID %></li>
+     <% } %>
+        <% break;
+
+        case 'Hola': %>
+        <% for(let i = 1; i <= times; i++) { %>
+            <li><%= message %> <%= ID %></li>
+     <% } %>
+        <% break;
+
+        <!-- si se introduce un msj inexistente, indicara que hacer a continuacion -->
+        default: %>
+        <h2><%= ID %> EL mensaje <%= message %> es inexistente, intenta con Bienvenido, Adios y hola!</h2>
+        <% break; 
+    } %>
+   
+</body>
+</html>
